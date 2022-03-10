@@ -3,7 +3,7 @@ By **Wednesday, March 9**, you have to submit to the GitLab repository a plan wi
 -->
 
 # Project Proposal - Extending P0 with Exceptions
-### Group 12 - (Group Name)
+### Group 12 - (Group Name *TBA*)
 
 Team Members: 
 
@@ -39,7 +39,7 @@ The description has to elaborate on the problem, how the implementation will be 
  
 <br/>
 
-### What is P0:
+### What is `P0`:
 Developed by *Dr. Emil Sekerinski* and used in `COMPSCI 4TB3` course, the `P0` language is influenced by Pascal, a language designed for ease of compilation. The main syntactic elements of `P0` are _statements_, _declarations_, _types_, and _expressions_. `P0` takes the inputs of the procedures, compiles the inputs, and then generates WebAssebmbly code.
 
 In this project, we mainly focus on extending the current `P0` to handle the exceptions in the input procedures. We will define several common exceptions(as shown below) as well as the customized exception as `keywords` so that `P0` can recognize and compile them correctly; we will also allow the `try-catch` block and `throw` clause so that `P0` can generate proper WebAssembly exceptions.
@@ -147,24 +147,24 @@ An optional `msg` could be added to the exception to give an explanation.
 
 <br/>
 
-### Testing Method (Kevin)
+### Testing Method <!--(Kevin)-->
 Test cases will be unit tests for the function we added to `P0`. The format will most likely similar to the test cases provided in `P0` for testing other 'built-in' functions. For testing the efficiency, built-in `time` function can be used, or more specifically, the difference between timestamps before and after the code execution is also a way to determine the efficiency.
 
 <br/>
 
-### Documentation (Kevin)
+### Documentation <!--(Kevin)-->
 The specification documentation, or the guides for the project, will be available in the project Wiki page. All the details such as function specifications, installation guide and usage will be given step-by-step to minimize the confusion of the project principles and usage. Besides, a presentation slides will be available after the project is presented at the `4TB3` course, which will help to understand the project in a straightforward manner.
 
 <br/>
 
-### Purpose / Outcome / Changes from the current P0 (Kevin)
+### Purpose / Outcome / Changes from the current P0 <!--(Kevin)-->
 The purpose, or the goal of this project is to modify and add functions / classes to the current `P0` libraries so it has the ability to handle exceptions. Ultimately, with all the modifications to the `P0` compiler, it is able to parse and execute codes and expressions listed above and generate WebAssembly exceptions. The changes from the current `P0` compiler will be mainly adding codes to the current version of `P0`, and all of the changes will not affect the basic functionality of `P0`, which means purely adding features to it without losing any of its current ability.
 
 After working on this project, we should not only learned the principles of Exceptions in programming, working on WebAssembly to improve the efficiency of the program execution, but also improve our logical reasoning skills to another level.
 
 <br/>
 
-### Resources (Kevin)
+### Resources <!--(Kevin)-->
 
  - [WebAssembly/exception-handling](https://github.com/WebAssembly/exception-handling/blob/master/proposals/exception-handling/Exceptions.md)
  - [Guide for IPython core Developers](https://ipython.readthedocs.io/en/latest/coredev/index.html)
@@ -176,7 +176,7 @@ After working on this project, we should not only learned the principles of Exce
 <br/>
 
 
-## Division of work (Kevin)
+## Division of work <!--(Kevin)-->
 - *Meijing*
 	- Bridging and generating WebAssembly exceptions
 - *Fanping*
@@ -184,7 +184,7 @@ After working on this project, we should not only learned the principles of Exce
 - *Kevin*
 	- Test cases, Unit tests, Performance reports, Documentations, Presentation Slides and Scripts
 
-## Weekly schedule (Kevin)
+## Weekly schedule <!--(Kevin)-->
 
 |    Date   |              Goal              |
 |:---------:|:------------------------------:|
