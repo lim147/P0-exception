@@ -147,8 +147,20 @@ An optional `msg` could be added to the exception to give an explanation.
 
 <br/>
 
+### Testing Method (Kevin)
+Test cases will be unit tests for the function we added to `P0`. The format will most likely similar to the test cases provided in `P0` for testing other 'built-in' functions. For testing the efficiency, built-in `time` function can be used, or more specifically, the difference between timestamps before and after the code execution is also a way to determine the efficiency.
+
+<br/>
+
+### Documentation (Kevin)
+The specification documentation, or the guides for the project, will be available in the project Wiki page. All the details such as function specifications, installation guide and usage will be given step-by-step to minimize the confusion of the project principles and usage. Besides, a presentation slides will be available after the project is presented at the `4TB3` course, which will help to understand the project in a straightforward manner.
+
+<br/>
+
 ### Purpose / Outcome / Changes from the current P0 (Kevin)
-The purpose or the goal of this project is to modify and add functions/classes to the current `P0` libraries so it has the ability to handle exceptions. Ultimately, with all the modifications to the `P0` compiler, it is able to parse and execute codes and expressions listed above and generate WebAssembly exceptions. The changes from the current `P0` compiler will be mainly adding codes to the current version of `P0` given in lecture content **Ch 5 Construction of a parser** Jupyter notebooks, and all of the changes will not affect the basic functionality of `P0`, which means purely adding features to it without losing any of its current ability.
+The purpose, or the goal of this project is to modify and add functions / classes to the current `P0` libraries so it has the ability to handle exceptions. Ultimately, with all the modifications to the `P0` compiler, it is able to parse and execute codes and expressions listed above and generate WebAssembly exceptions. The changes from the current `P0` compiler will be mainly adding codes to the current version of `P0`, and all of the changes will not affect the basic functionality of `P0`, which means purely adding features to it without losing any of its current ability.
+
+After working on this project, we should not only learned the principles of Exceptions in programming, working on WebAssembly to improve the efficiency of the program execution, but also improve our logical reasoning skills to another level.
 
 <br/>
 
