@@ -5,7 +5,7 @@ By **Wednesday, March 9**, you have to submit to the GitLab repository a plan wi
 # Project Proposal - Extending P0 with Exceptions
 ### Group 12 - (Group Name *TBA*)
 
-Team Members: 
+Team Members:
 
  - *Meijing Li*
  - *Fanping Jiang*
@@ -16,8 +16,8 @@ Team Members:
 [Exceptions](https://github.com/WebAssembly/exception-handling/blob/master/proposals/exception-handling/Exceptions.md) have recently been added to WebAssembly. The task is to extend the P0 language with **try-catch** and **throw** constructs and extend the compiler to generate WebAssembly exceptions. Exceptions may be thrown explicitly by a throw statement and implicitly when e.g. dividing by zero or indexing an array out of bounds. It is up to you to define the specifics; here is a possible example:
 ```
 procedure sqrt(x: integer) → (r: integer)
-    if x < 0 then throw else ... 
-    
+    if x < 0 then throw else ...
+
 procedure quadraticsolution(a, b, c: integer) → (x, y: integer)
     var d: integer
         d ← sqrt(a × a - 4 × a × c)
@@ -36,10 +36,10 @@ program equationsolver
 <!---
 The description has to elaborate on the problem, how the implementation will be tested and measured (if efficiency is the goal), how it will be documented, and what insight you hope to gain from it.
 -->
- 
+
 <br/>
 
-### What is `P0`:
+### What is `P0`: <!--(Meijing)-->
 Developed by *Dr. Emil Sekerinski* and used in `COMPSCI 4TB3` course, the `P0` language is influenced by Pascal, a language designed for ease of compilation. The main syntactic elements of `P0` are _statements_, _declarations_, _types_, and _expressions_. `P0` takes the inputs of the procedures, compiles the inputs, and then generates WebAssebmbly code.
 
 In this project, we mainly focus on extending the current `P0` to handle the exceptions in the input procedures. We will define several common exceptions(as shown below) as well as the customized exception as `keywords` so that `P0` can recognize and compile them correctly; we will also allow the `try-catch` block and `throw` clause so that `P0` can generate proper WebAssembly exceptions.
@@ -77,12 +77,12 @@ Above is a brief introduction of `P0` quoted from *Ch5 - The Construction of a P
 
 <br/>
 
-### Exceptions that will be handled in the project:
+### Exceptions stuctures will be handled in the project: <!--(Meijing)-->
 - **try-catch** block:
 
 There could be multiple `catch` blocks to capture different kinds of exceptions.
 ```
-    try 
+    try
         statements
     catch exception
         statements
@@ -108,12 +108,24 @@ An optional `msg` could be added to the exception to give an explanation.
         - ...
     - Customized Exception type:
         - **CustomizedException**: Exception thrown by the users
-        
-        
+
+
 *Note: more types of exceptions will be updated along the process of implementing the project*
 
+### Sepcification of Exception handling  <!--(Fanping)-->
+We can now using Hoare's logic to show the specification.
 
-### Implementation of Exception handling
+Without exception handling, a `P0` statement `C` with triple `{P} C {Q}`, where `P` stands for `pre-condition`; `Q` stands for `post-condition`, indicates that if `P` holds before the excution of `C`, then `Q` holds after the excution too.
+
+Now the quadruple `{P} C {Q, E}` indicates that, if `C` compiles and executes without error, then `Q` holds; otherwise `E` holds. For different statements `C`, we can specify `E` accordingly.
+- Empty
+  In this case, `E` does not exists.
+- Concatenation
+  If we have `{P} C_1 {Q, E_1}` and `{Q} C_2 {R, E_2}`, then `{P} C_1 {Q, E_1} C_2 {R, E_2}`.
+
+*Note: more types of statements will be updated along the process of implementing the project*
+
+### Implementation of Exception handling <!--(Fanping, Meijing)-->
 - Explicit Exception Handling
     - *try-catch* block
 
@@ -130,16 +142,30 @@ An optional `msg` could be added to the exception to give an explanation.
       ```
 - Implicit Exception Handling
 
-    For a statement or expression `S` that could potentially cause the exception, to compile it, `P0` will add `pre-condition P` and `post-condition Q` to `S` in the form of `(P) S (Q)`to restrict the cases where `S` can be executed without exceptions. However, if the `P` or `Q` are violated in the compilation procedure, the corresponding pre-defined exception will be thrown by the `P0`.
+    For a statement `S` with expected output `o` that could potentially cause the exception `e`, to compile by `P0` or execute it, `S` will either be processed correctly and output `o`, or will output `e` to indicate that there exists an error.
 
-    For example: Compiling the code below
-    ```
-    b = 0
-    ...
-    a / b
-    ```
+    - Compiling Error
+      If `S` has fatal syntax error, then the compilation will stop immediately and raise an exception.
 
-    `P0` first identifies that the expression `a/b` will potentially cause the exception, and next `P0` adds the **pre-condition** `b ≠ 0` to it(i.e. `(b ≠ 0) a/b`). Since b's value can be found in the environment which is 0, thus the **pre-condition** is violated, and as a result exception `ZeroDivisionError` is thrown.
+      For example:
+      ```
+      a += 3
+      int a = 0
+      ```
+      In the above code block, `a` is initialized after it is first called, which will cause an `AccessBeforeInitializationError`.
+
+    - Run Time Error
+      Sometimes an error happens when the code is executing. It is impossible to predict such error before running the code.
+
+      For example:
+      ```
+      a = 34 * 5 - 170
+      b = 99 / a
+      ```
+      Before execution, it is impossible to access the value of `a`, all we know about `a` is that: `a` is some numeric value of another expression.
+      Therefore, when `99 / a` is excuted, a `ZeroDivisionError` will pop up.
+
+    In general, `P0` tags all expressions (ie. `a/b`) with potential exceptions, and check every possible steps that may cause exceptions. After compilation, such debugging code will be embedded silently into the compiled program as well.
 
 
 *Note: more details of the implementation of exception handling will be updated along the process of implementing the project*
@@ -170,7 +196,7 @@ After working on this project, we should not only learned the principles of Exce
  - [Guide for IPython core Developers](https://ipython.readthedocs.io/en/latest/coredev/index.html)
  - [Anaconda (for deploying Jupyter to local machine)](https://www.anaconda.com/products/individual)
  - [The Jupyter Notebook - Official Documentation of Jupyter Notebook](https://jupyter-notebook.readthedocs.io/en/stable/)
- 
+
 *Note: Further resources will be added if necessary during the development.*
 
 <br/>
