@@ -8,8 +8,8 @@ By **Wednesday, March 9**, you have to submit to the GitLab repository a plan wi
 Team Members: 
 
  - *Meijing Li*
- - *Fanping*
- - *Kevin*
+ - *Fanping Jiang*
+ - *Kevin Zhou*
 
 
 ## Background
