@@ -79,6 +79,7 @@ Above is a brief introduction of `P0` quoted from *Ch5 - The Construction of a P
 
 ### Exceptions that will be handled in the project:
 - **try-catch** block:
+
 There could be multiple `catch` blocks to capture different kinds of exceptions.
 ```
     try 
@@ -91,6 +92,7 @@ There could be multiple `catch` blocks to capture different kinds of exceptions.
 ```
 
 - **throw** clause:
+
 An optional `msg` could be added to the exception to give an explanation.
 ```
     throw exception('msg')
@@ -107,23 +109,27 @@ An optional `msg` could be added to the exception to give an explanation.
     - Customized Exception type:
         - **CustomizedException**: Exception thrown by the users
         
-** More types of exceptions will be updated along the process of implementing the project**
+        
+*Note: more types of exceptions will be updated along the process of implementing the project*
 
 
 ### Implementation of Exception handling
 - Explicit Exception Handling
     - *try-catch* block
+
       The grammar for *try-catch* block is like:
       ```
       try-catch ::= try statement { catch exception statements }
       exception ::= ZeroDivisionError | IndexError | TypeError | NameError | SyntaxError | ... | CustomizedException
       ```
     - *throw* clause
+
       The grammar, in this case, is like:
       ```
       throwException ::= 'throw' exception 
       ```
 - Implicit Exception Handling
+
     For a statement or expression `S` that could potentially cause the exception, to compile it, `P0` will add `pre-condition P` and `post-condition Q` to `S` in the form of `(P) S (Q)`to restrict the cases where `S` can be executed without exceptions. However, if the `P` or `Q` are violated in the compilation procedure, the corresponding pre-defined exception will be thrown by the `P0`.
 
     For example: Compiling the code below
@@ -132,9 +138,11 @@ An optional `msg` could be added to the exception to give an explanation.
     ...
     a / b
     ```
+
     `P0` first identifies that the expression `a/b` will potentially cause the exception, and next `P0` adds the **pre-condition** `b ≠ 0` to it(i.e. `(b ≠ 0) a/b`). Since b's value can be found in the environment which is 0, thus the **pre-condition** is violated, and as a result exception `ZeroDivisionError` is thrown.
 
-** More details of the implementation of exception handling will be updated along the process of implementing the project**
+
+*Note: more details of the implementation of exception handling will be updated along the process of implementing the project*
 
 
 <br/>
