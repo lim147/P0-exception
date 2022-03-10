@@ -7,7 +7,7 @@ By **Wednesday, March 9**, you have to submit to the GitLab repository a plan wi
 
 Team Members: 
 
- - *Meijing Li(400110713)*
+ - *Meijing Li*
  - *Fanping*
  - *Kevin*
 
@@ -77,7 +77,7 @@ Above is a brief introduction of `P0` quoted from *Ch5 - The Construction of a P
 
 <br/>
 
-### Common exceptions that will be handled in the project: (May)
+### Common exceptions that will be handled in the project: (Meijing)
 - *try-catch* block:
 ```
     try 
@@ -106,7 +106,7 @@ Above is a brief introduction of `P0` quoted from *Ch5 - The Construction of a P
         - **CustomizedException**: Exception thrown by the users
         
 
-### Implementation of Exceptions (May, Fanping)
+### Implementation of Exceptions (Meijing, Fanping)
 - Explicit Exception Handling
     - *try-catch* block
       The grammar for *try-catch* block is like:
