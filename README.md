@@ -39,10 +39,10 @@ The description has to elaborate on the problem, how the implementation will be 
  
 <br/>
 
-### What is P0: (Kevin)
-Developed by *Dr. Emil Sekerinski* and used in `COMPSCI 4TB3` course, the `P0` language in influenced by Pascal, a language designed for ease of compilation. The main syntactic elements of `P0` are _statements_, _declarations_, _types_, and _expressions_. `P0` takes the inputs of the procedures, compiles the inputs, and then generates WebAssebmbly code.
+### What is P0:
+Developed by *Dr. Emil Sekerinski* and used in `COMPSCI 4TB3` course, the `P0` language is influenced by Pascal, a language designed for ease of compilation. The main syntactic elements of `P0` are _statements_, _declarations_, _types_, and _expressions_. `P0` takes the inputs of the procedures, compiles the inputs, and then generates WebAssebmbly code.
 
-In this project, we mainly focus on extending the currently `P0` to handle the exceptions in the input procedures. We will define several common exceptions(as shown below) in the procedures as `keywords` to that `P0` is able to recognize and compile correctly; we will also allow the `try-catch` and `throw` blocks so that `P0` is able to generate proper WebAssembly exceptions.
+In this project, we mainly focus on extending the current `P0` to handle the exceptions in the input procedures. We will define several common exceptions(as shown below) as well as the customized exception as `keywords` so that `P0` can recognize and compile them correctly; we will also allow the `try-catch` block and `throw` clause so that `P0` can generate proper WebAssembly exceptions.
 
 <!---
 generates Indentation is used for bracketing and result parameters are named. The following example illustrates variable and procedure declarations, value and result parameters, loops, and I/O in `P0`:
@@ -77,19 +77,21 @@ Above is a brief introduction of `P0` quoted from *Ch5 - The Construction of a P
 
 <br/>
 
-### Common exceptions that will be handled in the project: (Meijing)
-- *try-catch* block:
+### Exceptions that will be handled in the project:
+- **try-catch** block:
+There could be multiple `catch` blocks to capture different kinds of exceptions.
 ```
     try 
         statements
-    catch exception(i)
+    catch exception
         statements
-    catch exception(j)
+    catch exception
         statements
     ...
 ```
 
-- *throw* clause:
+- **throw** clause:
+An optional `msg` could be added to the exception to give an explanation.
 ```
     throw exception('msg')
 ```
@@ -105,8 +107,10 @@ Above is a brief introduction of `P0` quoted from *Ch5 - The Construction of a P
     - Customized Exception type:
         - **CustomizedException**: Exception thrown by the users
         
+** More types of exceptions will be updated along the process of implementing the project**
 
-### Implementation of Exceptions (Meijing, Fanping)
+
+### Implementation of Exception handling
 - Explicit Exception Handling
     - *try-catch* block
       The grammar for *try-catch* block is like:
@@ -115,28 +119,28 @@ Above is a brief introduction of `P0` quoted from *Ch5 - The Construction of a P
       exception ::= ZeroDivisionError | IndexError | TypeError | NameError | SyntaxError | ... | CustomizedException
       ```
     - *throw* clause
-      The grammar in this case is like:
+      The grammar, in this case, is like:
       ```
       throwException ::= 'throw' exception 
       ```
 - Implicit Exception Handling
-    For a statement or expression `S` that could potentially cause the exception, to compile it, `P0` will add `pre-condition P` and `post-condition Q` to `S` in the form of `(P) S (Q)`to restrict the cases where `S` can be executed without exceptions. However, if the `P` or `Q` are violated in the compilation procedure, the corresponding exception will be thrown by the `P0`.
+    For a statement or expression `S` that could potentially cause the exception, to compile it, `P0` will add `pre-condition P` and `post-condition Q` to `S` in the form of `(P) S (Q)`to restrict the cases where `S` can be executed without exceptions. However, if the `P` or `Q` are violated in the compilation procedure, the corresponding pre-defined exception will be thrown by the `P0`.
 
-    For example: Compiling the code block below
+    For example: Compiling the code below
     ```
     b = 0
     ...
     a / b
     ```
-    `P0` first identifies the the expression `a/b` which will potentially cause the exception, and then `P0` adds the **pre-condition** `b ≠ 0` to it(i.e. `(b ≠ 0) a/b`). However, b's value can be found in the environment which is 0, thus the **pre-condition** is violated, and as a result `ZeroDivisionError` is thrown.
+    `P0` first identifies that the expression `a/b` will potentially cause the exception, and next `P0` adds the **pre-condition** `b ≠ 0` to it(i.e. `(b ≠ 0) a/b`). Since b's value can be found in the environment which is 0, thus the **pre-condition** is violated, and as a result exception `ZeroDivisionError` is thrown.
 
-** More details of exceptions will be updated along the process of implementing the project**
+** More details of the implementation of exception handling will be updated along the process of implementing the project**
 
 
 <br/>
 
 ### Purpose / Outcome / Changes from the current P0 (Kevin)
-The purpose, or the goal of this project is to modify and add functions / classes to the current `P0` libraries so it has the ability to handle exceptions. Ultimately, with all the modifications to the `P0` compiler, it is able to parse and execute codes and expressions listed above and generate WebAssembly exceptions. The changes from the current `P0` compiler will be mainly adding codes to the current version of `P0` given in lecture content **Ch 5 Construction of a parser** Jupyter notebooks, and all of the changes will not affect the basic functionality of `P0`, which means purely adding features to it without losing any of its current ability.
+The purpose or the goal of this project is to modify and add functions/classes to the current `P0` libraries so it has the ability to handle exceptions. Ultimately, with all the modifications to the `P0` compiler, it is able to parse and execute codes and expressions listed above and generate WebAssembly exceptions. The changes from the current `P0` compiler will be mainly adding codes to the current version of `P0` given in lecture content **Ch 5 Construction of a parser** Jupyter notebooks, and all of the changes will not affect the basic functionality of `P0`, which means purely adding features to it without losing any of its current ability.
 
 <br/>
 
