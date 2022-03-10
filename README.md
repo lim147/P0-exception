@@ -126,7 +126,7 @@ An optional `msg` could be added to the exception to give an explanation.
 
       The grammar, in this case, is like:
       ```
-      throwException ::= 'throw' exception 
+      throwException ::= 'throw' exception ['(' msg ')']
       ```
 - Implicit Exception Handling
 
