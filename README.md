@@ -12,6 +12,37 @@ Team Members:
  - *Kevin Zhou*
 
 
+### Implementation:
+- Based on the version of `p0` in ch5
+- In SC, define symbols: `EXPLICITEXCEPTION = 52; IMPLICITEXCEPTION = 53`; add keyword `'throw': EXPLICITEXCEPTION`
+- In ST: create type `Excp` for exception:
+    ```
+    class Excp:
+    def __init__(self, excpType, message=""):
+        self.excpType, self.message = excpType, message
+    def _str_(self):
+        return 'Self-defined Exception(type = ' + str(self.excpType) + ', message = ' + \
+               self.message + ')'
+    ```
+    - excpType ∈ {EXPLICITEXCEPTION, IMPLICITEXCEPTION}
+    - message a string of explanation(optional)
+
+- In `P0`:
+    - Add `throw` to statement:
+    ```
+    statement ::=
+        ...
+        "throw"
+    ```
+
+
+- **TODO** in CGWAT:
+    - `genExcp()` (if the interface is changed, also update the use of the function in `P0`)
+
+
+
+
+
 ## Background
 [Exceptions](https://github.com/WebAssembly/exception-handling/blob/master/proposals/exception-handling/Exceptions.md) have recently been added to WebAssembly. The task is to extend the P0 language with **try-catch** and **throw** constructs and extend the compiler to generate WebAssembly exceptions. Exceptions may be thrown explicitly by a throw statement and implicitly when e.g. dividing by zero or indexing an array out of bounds. It is up to you to define the specifics; here is a possible example:
 ```
