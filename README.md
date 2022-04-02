@@ -13,7 +13,7 @@ Team Members:
 
 
 ### Implementation:
-- Based on the version of `p0` in ch5
+- Based on the version of `P0` in ch5
 - In SC, define symbols: `EXPLICITEXCEPTION = 52; IMPLICITEXCEPTION = 53`; add keyword `'throw': EXPLICITEXCEPTION`
 - In ST: create type `Excp` for exception:
     ```
@@ -25,7 +25,7 @@ Team Members:
                self.message + ')'
     ```
     - excpType ∈ {EXPLICITEXCEPTION, IMPLICITEXCEPTION}
-    - message a string of explanation(optional)
+    - message a string of explanation (optional)
 
 - In `P0`:
     - Add `throw` to statement:
@@ -146,7 +146,7 @@ An optional `msg` could be added to the exception to give an explanation.
 ### Sepcification of Exception handling  <!--(Fanping)-->
 We can now using Hoare's logic to show the specification.
 
-Without exception handling, a `P0` statement `C` with triple `{P} C {Q}`, where `P` stands for `pre-condition`; `Q` stands for `post-condition`, indicates that if `P` holds before the excution of `C`, then `Q` holds after the excution too.
+Without exception handling, a `P0` statement `C` with triple `{P} C {Q}`, where `P` stands for `pre-condition`; `Q` stands for `post-condition`, indicates that if `P` holds before the execution of `C`, then `Q` holds after the execution too.
 
 Now the quadruple `{P} C {Q, E}` indicates that, if `C` compiles and executes without error, then `Q` holds; otherwise `E` holds. For different statements `C`, we can specify `E` accordingly.
 - Empty
