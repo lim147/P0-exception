@@ -28,16 +28,18 @@ Team Members:
     - message a string of explanation(optional)
 
 - In `P0`:
-    - Add `throw` to statement:
+    - Add `throw`. `try-catch`to statement:
     ```
     statement ::=
         ...
         "throw"
+        "try" statementSuite "catch" statementSuite
     ```
 
 
 - **TODO** in CGWAT:
     - `genExcp()` (if the interface is changed, also update the use of the function in `P0`)
+    - ...
 
 
 
