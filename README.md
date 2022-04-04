@@ -14,7 +14,7 @@ Team Members:
 
 ### Implementation:
 - Based on the version of `P0` in ch5
-- In SC, define symbols: `EXPLICITEXCEPTION = 52; IMPLICITEXCEPTION = 53`; add keyword `'throw': EXPLICITEXCEPTION`
+- In SC, define symbols: `EXPLICITEXCEPTION`, `IMPLICITEXCEPTION` `THROW`, `CATCH`; add keywords `throw`, `catch`
 - In ST: create type `Excp` for exception:
     ```
     class Excp:
