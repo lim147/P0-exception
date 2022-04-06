@@ -12,7 +12,7 @@ Team Members:
  - *Kevin Zhou*
 
 
-### Implementation:
+## Implementation:
 - Based on the version of `P0` in ch5
 - In SC, define symbols: `EXPLICITEXCEPTION`, `IMPLICITEXCEPTION` `THROW`, `CATCH`; add keywords `throw`, `catch`
 - In ST: create type `Excp` for exception:
@@ -40,6 +40,11 @@ Team Members:
 - **TODO** in CGWAT:
     - `genExcp()` (if the interface is changed, also update the use of the function in `P0`)
     - ...
+
+
+### Implicit Exception Handling:
+- Index out of bound
+- Division/Mod by 0
 
 
 

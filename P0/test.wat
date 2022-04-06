@@ -1,29 +1,24 @@
 (module
-(import "P0lib" "write" (func $write (param i32)))
-(import "P0lib" "writeln" (func $writeln))
-(import "P0lib" "read" (func $read (result i32)))
-(func $sqrt (param $x i32) (result i32)
-(local $r i32)
-(local $0 i32)
-local.get $x
-i32.const 0
-i32.lt_s
-if
-throw 0
-else
-local.get $x
-local.set $r
-end
-local.get $r)
-(func $program
-(local $a i32)
-(local $0 i32)
-i32.const 2
-call $sqrt
-local.set $a
-local.get $a
-call $write
-)
-(memory 1)
-(start $program)
+  (import "P0lib" "write" (func $write (param i32)))
+  (import "P0lib" "writeln" (func $writeln))
+  (import "P0lib" "read" (func $read (result i32)))
+  (tag $e1 (param i32))
+  (tag $e2 (param i32))
+
+  (func $test
+     try
+      i32.const 0
+      throw $e2
+     catch $e1
+      drop
+      i32.const 1
+      call $write
+     catch $e2
+      drop
+      i32.const 2
+      call $write
+    catch_all
+    end
+  )
+ (start $test)
 )
