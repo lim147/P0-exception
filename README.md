@@ -12,43 +12,6 @@ Team Members:
  - *Kevin Zhou*
 
 
-## Implementation:
-- Based on the version of `P0` in ch5
-- In SC, define symbols: `EXPLICITEXCEPTION`, `IMPLICITEXCEPTION` `THROW`, `CATCH`; add keywords `throw`, `catch`
-- In ST: create type `Excp` for exception:
-    ```
-    class Excp:
-    def __init__(self, excpType, message=""):
-        self.excpType, self.message = excpType, message
-    def _str_(self):
-        return 'Self-defined Exception(type = ' + str(self.excpType) + ', message = ' + \
-               self.message + ')'
-    ```
-    - excpType ∈ {EXPLICITEXCEPTION, IMPLICITEXCEPTION}
-    - message a string of explanation (optional)
-
-- In `P0`:
-    - Add `throw`. `try-catch`to statement:
-    ```
-    statement ::=
-        ...
-        "throw"
-        "try" statementSuite "catch" statementSuite
-    ```
-
-
-- **TODO** in CGWAT:
-    - `genExcp()` (if the interface is changed, also update the use of the function in `P0`)
-    - ...
-
-
-### Implicit Exception Handling:
-- Index out of bound
-- Division/Mod by 0
-
-
-
-
 
 ## Background
 [Exceptions](https://github.com/WebAssembly/exception-handling/blob/master/proposals/exception-handling/Exceptions.md) have recently been added to WebAssembly. The task is to extend the P0 language with **try-catch** and **throw** constructs and extend the compiler to generate WebAssembly exceptions. Exceptions may be thrown explicitly by a throw statement and implicitly when e.g. dividing by zero or indexing an array out of bounds. It is up to you to define the specifics; here is a possible example:
@@ -253,7 +216,7 @@ After working on this project, we should not only learned the principles of Exce
 |    Date   |              Goal              |
 |:---------:|:------------------------------:|
 |  9-Mar-22 |   Finish the Project Proposal  |
-| 19-Mar-22 |                                |
-| 26-Mar-22 |                                |
-|  2-Apr-22 |                                |
-|  9-Apr-22 |                                |
+| 19-Mar-22 |   Modify the Parser  |
+| 26-Mar-22 |   Modify P0 to generate WebAssembly Exceptions    |
+|  2-Apr-22 |   Keep Modifying P0 and Testing  |
+|  9-Apr-22 |   Project Documentation and Slides   |
