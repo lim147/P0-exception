@@ -1,4 +1,5 @@
 # Project Proposal - Extending P0 with Exceptions
+
 ### Group 12
 
 Team Members:
@@ -7,7 +8,6 @@ Team Members:
  - *Fanping Jiang*
  - *Kevin Zhou*
 
-[[_TOC_]]
 
 ## Background
 [Exceptions](https://github.com/WebAssembly/exception-handling/blob/master/proposals/exception-handling/Exceptions.md) have recently been added to WebAssembly. The task is to extend the P0 language with **try-catch** and **throw** constructs and extend the compiler to generate WebAssembly exceptions. Exceptions may be thrown explicitly by a throw statement and implicitly when e.g. dividing by zero or indexing an array out of bounds. It is up to you to define the specifics; here is a possible example:
