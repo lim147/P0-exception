@@ -105,13 +105,18 @@ program test
 - Explicit Exception Handling
     - *try-catch* statement
 
-      The grammar for *try-catch* block is like:
+      The grammar for *try-catch* block is like: (i is integer exception tag, S and T are statements)
       ```
-      try S catch i₁ T₁ catch i₂ T₂ ... catchall
+      try S {catch (i | implicitExcp) T}
       ```
+      where
+      ```
+      implicitExcp ::= `indexoutofbound` | `zerodiv` | `zeromod`
+      ```
+
     - *throw* statement
 
-      The grammar, in this case, is like:
+      The grammar, in this case, is like: (i is integer exception tag)
       ```
       throw i
       ```
@@ -121,7 +126,7 @@ program test
     For a statement `S` with expected output `o` that could potentially cause the exception `e`, to compile by `P0` or execute it, `S` will either be processed correctly and output `o`, or will output `e` to indicate that there exists an error.
 
     - Index Out Of Bound
-      For expression `arr[i]`, error happens when i is out of the bound. To prevent this, we add 'if-else' to compare i with the array's upper and lower bounds. If it's out of range, we throw exception tag 110.
+      For expression `arr[i]`, error happens when i is out of the bound. To prevent this, we add 'if-else' to compare i with the array's upper and lower bounds. If it's out of range, we throw pre-defined exception Keyword `indexoutofbound`.
 
       For example:
       ```
@@ -134,11 +139,19 @@ program test
       ```
       var a: [1..2] → integer
       i ← read()
+      if (i < 1 or i >= 3) then throw indexoutofbound else b = a[3]
+      ```
+
+      In the implementation level, `indexoutofbound` matches to the integer exception tag `110`, therefore, the above code is the same as:
+      ```
+      var a: [1..2] → integer
+      i ← read()
       if (i < 1 or i >= 3) then throw 110 else b = a[3]
       ```
+
       
     - Division by 0
-      For expression `x div y`, error happens when y is 0. To prevent this, we add 'if-else' to compare y with 0. If it's 0, throw exception tag 111.
+      For expression `x div y`, error happens when y is 0. To prevent this, we add 'if-else' to compare y with 0. If it's 0, throw pre-defined exception Keyword `zerodiv`.
       
       For example:
       ```
@@ -148,12 +161,19 @@ program test
       Will be compiled as:
       ```
       y ← read()
+      if (y = 0) then throw zerodiv else b = x div y
+      ```
+      In the implementation level, `zerodiv` matches to the integer exception tag `111`, therefore, the above code is the same as:
+      ```
+      y ← read()
       if (y = 0) then throw 111 else b = x div y
       ```
+
+
     In general, `P0` tags all expressions (ie. `a/b`) with potential exceptions, and check every possible steps that may cause exceptions. After compilation, such debugging code will be embedded silently into the compiled program as well.
 
 
-*Note: more details of the implementation of exception handling will be updated along the process of implementing the project*
+*Note: more details of the implementation of exception handling is available in [Wiki-Implementation](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Implementation)*
 
 
 <br/>
