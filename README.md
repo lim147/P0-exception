@@ -41,7 +41,6 @@ program equationsolver
                 write(x); write(y)
             catch 4
                 done := true
-            catchall
 """)
 ```
 ## Project Descriptions
@@ -54,7 +53,7 @@ In this project, we mainly focus on extending the current `P0` to handle the exc
 
 
 ### Exceptions stuctures will be handled in the project: 
-- **try-catch** statement:
+- **try-catch** structure:
 
     There could be multiple `catch` blocks to capture different kinds of exceptions specified by different integer exception tags. 
     ```
@@ -65,10 +64,9 @@ In this project, we mainly focus on extending the current `P0` to handle the exc
         catch i₂
             statements
         ...
-        catchall
     ```
 
-- **throw** statement:
+- **throw** structure:
     You are able to throw different exceptions specified by the parameter 'i'.
     ```
         throw i
@@ -91,15 +89,15 @@ program test
         write(-1)
     catch 10
         write(5)
-    catchall
 ```
 
-**Note: the types of exceptions to be thrown are not restricted in our project. The users are free to choose any integer as the exception tag, except the numbers `110`, `111` and `112` which are pre-defined types and used in the implicit exception handling**
-|  Integer Exception Tag |    Exception    |
-|------------------------|-----------------|
-| 110  | Index out of bound |
-| 111  | Division by 0 |
-| 112  | Mod by 0 |
+**Note: the types of exceptions to be thrown are not restricted in our project. The users are free to choose any integer as the exception tag, except the numbers `110`, `111` and `112`(the three numbers here are randonly chosen) which are matched to the pre-defined exception types and used in the implicit exception handling**
+
+|  Integer Exception Tag |    Exception    | Pre-defined Exception Keyword in P0 |
+|------------------------|-----------------|-------------------------------------|
+| 110  | Index out of bound | `indexoutofbound` |
+| 111  | Division by 0 | `zerodiv` |
+| 112  | Mod by 0 | `zeromod` |
 
 
 
