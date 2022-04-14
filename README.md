@@ -218,9 +218,9 @@ After working on this project, we should not only learned the principles of Exce
  *Note: Since we encourage all of us to participate in every aspects of the project and share the idea together during the group meeting, the division of work can be slightly different from the actual contribution of the project*
 
 - *Meijing*
-    - Bridging and generating WebAssembly exceptions
+    - Grammar, definitions and implementations of `P0` parser, as well as implicit exception handling
 - *Fanping*
-    - Rules, definitions and implementations on the Math side of `P0` exceptions
+    - Bridging and generating tranlating schema from P0 structures to WebAssembly exceptions
 - *Kevin*
     - Test cases, Unit tests, Performance reports, Documentations, Presentation Slides and Scripts
 
@@ -232,4 +232,9 @@ After working on this project, we should not only learned the principles of Exce
 | 19-Mar-22 |   Modify the Parser  |
 | 26-Mar-22 |   Modify P0 to generate WebAssembly Exceptions    |
 |  2-Apr-22 |   Keep Modifying P0 and Testing  |
-|  9-Apr-22 |   Project Documentation and Slides   |
+|  9-Apr-22 |   Script Project Documentation and Slides   |
+|  12-Apr-22 |  Finish Project, send it to professor to review |
+|  14-Apr-22 | Receive feedback from professor |
+|  17-April-22 | Update code, documentation, slides based on the feedbacks|
+|  18-April-22 | Final submission of the project |
+
