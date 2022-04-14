@@ -188,6 +188,9 @@ After working on this project, we should not only learned the principles of Exce
 
 
 ## Division of work <!--(Kevin)-->
+
+ *Note: Since we encourage all of us to participate in every aspects of the project and share the idea together during the group meeting, the division of work can be slightly different from the actual contribution of the project*
+
 - *Meijing*
     - Bridging and generating WebAssembly exceptions
 - *Fanping*
