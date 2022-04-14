@@ -1,5 +1,7 @@
 # Project Proposal - Extending P0 with Exceptions
 
+*The project is a modified `P0` compiler that is able to generate WebAssembly exceptions. The original author of all the Jupyter Notebooks with `P0` source code are Dr. Emil Sekerinski*
+
 **More documentation in details available in [Wiki](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Introduction)**
 
 
@@ -188,6 +190,9 @@ After working on this project, we should not only learned the principles of Exce
 
 
 ## Division of work <!--(Kevin)-->
+
+ *Note: Since we encourage all of us to participate in every aspects of the project and share the idea together during the group meeting, the division of work can be slightly different from the actual contribution of the project*
+
 - *Meijing*
     - Bridging and generating WebAssembly exceptions
 - *Fanping*
