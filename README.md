@@ -132,21 +132,21 @@ program test
       ```
       var a: [1..2] → integer
       i ← read()
-      b = a[i]
+      b := a[i]
       ```
       
       Will be compiled as:
       ```
       var a: [1..2] → integer
       i ← read()
-      if (i < 1 or i >= 3) then throw indexoutofbound else b = a[3]
+      if (i < 1 or i ≥ 3) then throw indexoutofbound else b := a[3]
       ```
 
       In the implementation level, `indexoutofbound` matches to the integer exception tag `110`, therefore, the above code is the same as:
       ```
       var a: [1..2] → integer
       i ← read()
-      if (i < 1 or i >= 3) then throw 110 else b = a[3]
+      if (i < 1 or i ≥ 3) then throw 110 else b := a[3]
       ```
 
       
@@ -156,17 +156,17 @@ program test
       For example:
       ```
       y ← read()
-      b = x div y
+      b := x div y
       ```
       Will be compiled as:
       ```
       y ← read()
-      if (y = 0) then throw zerodiv else b = x div y
+      if (y = 0) then throw zerodiv else b := x div y
       ```
       In the implementation level, `zerodiv` matches to the integer exception tag `111`, therefore, the above code is the same as:
       ```
       y ← read()
-      if (y = 0) then throw 111 else b = x div y
+      if (y = 0) then throw 111 else b := x div y
       ```
 
 
