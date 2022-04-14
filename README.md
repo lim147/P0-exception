@@ -111,7 +111,7 @@ program test
       ```
       where
       ```
-      implicitExcp ::= `indexoutofbound` | `zerodiv` | `zeromod`
+      implicitExcp ::= 'indexoutofbound' | 'zerodiv' | 'zeromod'
       ```
 
     - *throw* statement
