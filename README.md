@@ -1,5 +1,8 @@
 # Project Proposal - Extending P0 with Exceptions
 
+**More documentation in details available in [Wiki](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Introduction)**
+
+
 ### Group 12
 
 Team Members:
