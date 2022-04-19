@@ -2,7 +2,20 @@
 
 *The project is a modified `P0` compiler that is able to generate WebAssembly exceptions. The original author of all the Jupyter Notebooks with `P0` source code are Dr. Emil Sekerinski*
 
-**More documentation in details available in [Wiki](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Introduction)**
+# Project Final Submission
+- Documentation: 
+  Besides readme, more documentation in details including the **usage** and **implementation** available in [Wiki](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Introduction)
+
+- Source code: 
+  Available in the P0 folder
+
+- Testing:
+  Check [Wiki-Tesing](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Testing)
+
+- Presentation slides & live demo:
+  Check the [presentation notebook](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/blob/master/Presentation%20Slides/P0_Presentation_Slides.ipynb)
+  
+
 
 
 ### Group 12
