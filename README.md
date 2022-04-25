@@ -4,16 +4,16 @@
 
 # Project Final Submission
 - Documentation: 
-  Besides readme, more documentation in details including the **usage** and **implementation** available in [Wiki](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Introduction)
+  Besides readme, more documentation in details including the **usage** and **implementation** available in [Wiki](https://github.com/lim147/P0-exception/wiki)
 
 - Source code: 
   Available in the P0 folder
 
 - Testing:
-  Check [Wiki-Tesing](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Testing)
+  Check [Wiki-Tesing](https://github.com/lim147/P0-exception/wiki/Testing)
 
 - Presentation slides & live demo:
-  Check the [presentation notebook](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/blob/master/Presentation%20Slides/P0_Presentation_Slides.ipynb)
+  Check the [presentation notebook](https://github.com/lim147/P0-exception/blob/master/Presentation%20Slides/P0_Presentation_Slides.ipynb)
   
 
 
@@ -192,7 +192,7 @@ program test
     In general, `P0` tags all expressions (ie. `a/b`) with potential exceptions, and check every possible steps that may cause exceptions. After compilation, such debugging code will be embedded silently into the compiled program as well.
 
 
-*Note: more details of the implementation of exception handling is available in [Wiki-Implementation](https://gitlab.cas.mcmaster.ca/cs4tb3-winter22/group-12/-/wikis/Implementation)*
+*Note: more details of the implementation of exception handling is available in [Wiki-Implementation](https://github.com/lim147/P0-exception/wiki/Implementation)*
 
 
 <br/>
